@@ -13,9 +13,13 @@
             --text: #1f2937;
             --muted: #6b7280;
             --accent: #3329a0;
-            --card: #ffffff;
+            --card: #fff;
             --line: #e5e7eb;
             --r: 12px;
+            --page-pad: 16px;
+            --gap: 24px;
+            --sidebar-w: 260px;
+            --maxw: 1440px;
         }
 
         * {
@@ -41,23 +45,23 @@
         .layout {
             display: flex;
             width: 100%;
-            max-width: 1280px;
+            max-width: var(--maxw);
             margin: 0 auto;
-            padding: 16px;
-            gap: 24px;
+            padding: var(--page-pad);
+            gap: var(--gap);
         }
 
         .sidebar {
-            width: 260px;
+            width: var(--sidebar-w);
             background: var(--card);
             padding: 20px;
             border: 1px solid var(--line);
             border-radius: var(--r);
             text-align: center;
             position: fixed;
-            top: 16px;
-            left: 16px;
-            bottom: 16px;
+            top: var(--page-pad);
+            left: var(--page-pad);
+            bottom: var(--page-pad);
             display: flex;
             flex-direction: column;
             overflow: auto;
@@ -110,7 +114,7 @@
 
         .content {
             flex: 1;
-            margin-left: 300px;
+            margin-left: calc(var(--sidebar-w) + var(--gap) + var(--page-pad));
         }
 
         section {
