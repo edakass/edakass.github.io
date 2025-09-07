@@ -1,124 +1,342 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eda Kaş • Software Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f9fafb;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #2563eb;
-      --card: #ffffff;
-      --line: #e5e7eb;
-      --r: 12px;
-    }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: Inter, sans-serif; background: var(--bg); color: var(--text); }
-    a { color: var(--accent); text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eda Kaş • Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .layout { display:flex; max-width: 1100px; margin:0 auto; padding:20px; gap:40px; }
-    .sidebar { flex:0 0 280px; background:var(--card); padding:20px; border:1px solid var(--line); border-radius:var(--r); text-align:center; }
-    .sidebar img { width:160px; height:160px; border-radius:50%; object-fit:cover; margin-bottom:15px; }
-    .sidebar h1 { font-size:22px; margin:0; }
-    .sidebar h2 { font-size:15px; font-weight:400; color:var(--muted); margin:4px 0 20px; }
-    .sidebar nav a { display:block; margin:6px 0; font-weight:600; }
-    .sidebar .links { margin-top:20px; display:flex; justify-content:center; gap:12px; }
-    .sidebar .links a { font-size:20px; }
+    <style>
+        :root {
+            --bg: #f9fafb;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --accent: #3329a0;
+            --card: #ffffff;
+            --line: #e5e7eb;
+            --r: 12px;
+        }
 
-    .content { flex:1; }
-    section { margin-bottom:40px; }
-    h2 { font-size:20px; margin:0 0 10px; }
-    h3 { font-size:16px; margin:0 0 6px; }
-    p { margin:6px 0; line-height:1.5; }
-    .muted { color:var(--muted); }
-    .card { background:var(--card); padding:16px; border:1px solid var(--line); border-radius:var(--r); margin-bottom:12px; }
-    ul { margin:6px 0 0 18px; }
-    footer { text-align:center; padding:20px; color:var(--muted); border-top:1px solid var(--line); }
-  </style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .layout {
+            display: flex;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px;
+            gap: 24px;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: var(--card);
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            text-align: center;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        .sidebar img {
+            width: 140px;
+            height: 140px;
+            border-radius: 0;
+            object-fit: cover;
+            margin: 0 auto 14px;
+        }
+
+        .sidebar h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .sidebar h2 {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--muted);
+            margin: 4px 0 16px;
+        }
+
+        .sidebar nav a {
+            display: block;
+            margin: 6px 0;
+            font-weight: 600;
+        }
+
+        .sidebar .links {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .sidebar .links a svg {
+            width: 24px;
+            height: 24px;
+            display: block;
+            fill: var(--text);
+            transition: fill .2s;
+        }
+
+        .sidebar .links a:hover svg {
+            fill: var(--accent);
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 300px;
+        }
+
+        section {
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 0 0 6px;
+        }
+
+        p {
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .card {
+            background: var(--card);
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin: 6px 0 0 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+        @media (max-width: 860px) {
+            .layout {
+                flex-direction: column;
+                padding: 12px;
+                gap: 16px;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                left: auto;
+                right: auto;
+                top: auto;
+                bottom: auto;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <img src="profile.jpg" alt="Eda Kaş">
-      <h1>Eda Kaş</h1>
-      <h2>Java Backend Developer</h2>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="links">
-        <a href="https://github.com/edakass" target="_blank">🐙</a>
-        <a href="https://www.linkedin.com/in/eda-ka%C5%9F-289943180/" target="_blank">💼</a>
-        <a href="mailto:eda.kas60@gmail.com">✉️</a>
-      </div>
-    </aside>
+    <div class="layout">
+        <aside class="sidebar">
+            <img src="assets/social/eda.jpg" alt="Eda Kaş">
+            <h1>Eda Kaş</h1>
+            <h2>Software Developer</h2>
 
-    <div class="content">
-      <section id="about">
-        <h2>About Me</h2>
-        <p>Passionate backend developer with ~2.5 years of experience building Java/Spring Boot services in cloud environments (AWS, DigitalOcean). Enthusiastic about designing APIs, writing maintainable code, and collaborating in agile teams.</p>
-      </section>
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog Posts</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="card">
-          <h3>Software Developer — Prisync <span class="muted">(Jan 2023 – May 2025)</span></h3>
-          <ul>
-            <li>Developed and maintained internal services and UIs.</li>
-            <li>Migrated AWS‑based queue to DigitalOcean for cost savings.</li>
-            <li>Improved database queries, resolved timeouts.</li>
-            <li>Implemented Slack/Discord integrations and automated tasks.</li>
-          </ul>
-          <p class="muted">Java, Spring Boot, MySQL, AWS, DigitalOcean, RabbitMQ, Docker</p>
-        </div>
-        <div class="card">
-          <h3>Software Engineering Intern — Ziraat Teknoloji <span class="muted">(Jul 2021 – Sep 2021)</span></h3>
-          <p>Worked on Credit Applications team. Built a bank automation system with C#/.NET, Oracle DB.</p>
-        </div>
-      </section>
+            <div class="links">
+                <a href="https://github.com/edakass" target="_blank" aria-label="GitHub" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.383-1.333-1.753-1.333-1.753-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.334-5.466-5.931 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.48 11.48 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.921.42.36.81 1.096.81 2.22 0 1.604-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z" />
+                    </svg>
+                </a>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="card">
-          <h3>Digital Wallet Service</h3>
-          <p>Role‑based JWT authentication, wallet & transaction APIs, clean documentation.</p>
-          <p><a href="https://github.com/edakass/Digital-Wallet-Service" target="_blank">View on GitHub →</a></p>
-        </div>
-        <div class="card">
-          <h3>Cascadek</h3>
-          <p>Multi‑platform content publishing tool (Slack, Discord integrations).</p>
-        </div>
-      </section>
+                <a href="https://www.linkedin.com/in/eda-ka%C5%9F-289943180/" target="_blank" aria-label="LinkedIn"
+                    rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#0A66C2"
+                            d="M4.983 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM3.5 9h2.966v12H3.5zM14.746 9c-2.257 0-3.256 1.244-3.816 2.119V9H8v12h2.93v-6.59c0-1.75.332-3.445 2.5-3.445 2.135 0 2.166 1.996 2.166 3.56V21H18.5v-6.998C18.5 10.74 17.33 9 14.746 9z" />
+                    </svg>
+                </a>
 
-      <section id="education">
-        <h2>Education</h2>
-        <div class="card">
-          <h3>B.Sc. Computer Engineering — Gaziosmanpaşa University</h3>
-          <p class="muted">2017 – 2022</p>
-        </div>
-        <div class="card">
-          <h3>Erasmus — Politechnika Świętokrzyska</h3>
-          <p class="muted">Spring 2021 · Kielce, Poland</p>
-        </div>
-      </section>
+                <a href="https://medium.com/@edakas" target="_blank" aria-label="Medium" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1043.63 592.71">
+                        <path
+                            d="M588.67 296.36c0 163.67-131.98 296.35-294.34 296.35S0 460.03 0 296.36 131.98 0 294.33 0s294.34 132.68 294.34 296.36zm287.82 0c0 154.12-65.99 279-147.38 279s-147.39-124.88-147.39-279 65.99-279 147.39-279 147.38 124.88 147.38 279zm167.14 0c0 140.7-23.41 254.85-52.28 254.85-28.86 0-52.28-114.15-52.28-254.85s23.42-254.85 52.28-254.85c28.87 0 52.28 114.15 52.28 254.85z" />
+                    </svg>
+                </a>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:eda.kas60@gmail.com">eda.kas60@gmail.com</a></p>
-      </section>
+                <a href="mailto:eda.kas60@gmail.com" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM4 8.511V6h16v2.511l-8 5.333-8-5.333zM4 18V9.489l8 5.333 8-5.333V18H4z" />
+                    </svg>
+                </a>
+            </div>
+        </aside>
+
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate backend developer with ~2.5 years of experience building Java/Spring Boot
+                    services, working with cloud platforms such as AWS and DigitalOcean.
+                    I enjoy improving system performance and delivering reliable solutions as part of agile teams.
+                </p>
+                <p>
+                    Beyond coding, I like reading technical books to deepen my expertise, exploring novels, and
+                    traveling to discover new cultures and perspectives.
+                    These interests inspire me personally and also fuel my creativity and problem-solving skills as a
+                    developer.
+                </p>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="card">
+                    <h3>Software Developer — Prisync <span class="muted">(Jan 2023 – May 2025)</span></h3>
+                    <p>Developed and maintained internal services and UIs, optimized database queries, and built new
+                        front-end features. Automated manual tasks with Python, migrated an AWS-based queue system to
+                        DigitalOcean to cut costs, and contributed to bug fixes and web scraping projects. Collaborated
+                        with the product team in 2-week Agile (Scrum) sprints, ensuring efficient delivery of new
+                        services and improvements.</p>
+                    <p class="muted"><b>Tech Stack:</b> Java, Spring Boot, Spring MVC, Maven, Selenium, MySQL, RabbitMQ,
+                        HTML, CSS, JavaScript <br>
+                        <b>Cloud & DevOps:</b> AWS (S3, Lambda, Step Functions, CloudWatch, EC2, CLI), DigitalOcean
+                        (Droplets, Spaces, CLI), Docker, Jenkins (CI/CD) <br>
+                        <b>Monitoring & Tools:</b> Git, Grafana, Jira, Confluence, IntelliJ IDEA, Datagrip, Postman <br>
+                        <b>Other:</b> Python (automation), Web Scraping & Crawling
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Software Engineering Intern — Ziraat Teknoloji <span class="muted">(Jul 2021 – Sep 2021)</span>
+                    </h3>
+                    <p>Completed an internship in the Credit Applications – 4 department, collaborating with the team
+                        and learning enterprise practices. Explored the company’s sample database with <b>Oracle SQL
+                            Developer</b>, and developed a <b>Bank Automation System</b> using <b>C# (.NET
+                            Framework)</b>, <b>Windows Forms</b>, and <b>DevExpress Components</b>.</p>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="card">
+                    <h3>Digital Wallet Service</h3>
+                    <p>Role-based JWT authentication, wallet & transaction APIs, clean documentation.</p>
+                    <p><a href="https://github.com/edakass/Digital-Wallet-Service" target="_blank">View on GitHub →</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Veterinary App</h3>
+                    <p>Clinic management system for vets: pet records, appointments, and medical history tracking with
+                        Spring Boot & MySQL.</p>
+                    <p><a href="https://github.com/edakass/Vet-App" target="_blank">View on GitHub →</a></p>
+                </div>
+                <div class="card">
+                    <h3>Tracking Weight Application</h3>
+                    <p>Personal health app to log daily weight and visualize progress. Built with Java & JDBC, storing
+                        records in MySQL.</p>
+                    <p><a href="https://github.com/edakass/Tracking_Weight_Application" target="_blank">View on GitHub
+                            →</a></p>
+                </div>
+
+                <section id="blog">
+                    <h2>Blog Posts</h2>
+                    <div class="card">
+                        <ul>
+                            <li><a href="https://medium.com/@edakas/2025-0e1b747c563f" target="_blank">📚 2025 📚</a>
+                                <span class="muted">· Medium</span>
+                            </li>
+
+                            <li><a href="https://medium.com/@edakas/21-merge-two-sorted-lists-easy-11f24bd6a295"
+                                    target="_blank">21. Merge Two Sorted Lists — Easy</a> <span class="muted">·
+                                    Medium</span></li>
+                            <li><a href="https://medium.com/@edakas/kilo-takip-projesi-42b4fff7e037"
+                                    target="_blank">Tracking Weight App</a> <span class="muted">· Medium</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="education">
+                    <h2>Education</h2>
+                    <div class="card">
+                        <h3>B.Sc. Computer Engineering — Gaziosmanpaşa University</h3>
+                        <p class="muted">2017 – 2022 · Tokat, Türkiye</p>
+                    </div>
+                    <div class="card">
+                        <h3>Erasmus — Politechnika Świętokrzyska</h3>
+                        <p class="muted">Spring 2021 · Kielce, Poland</p>
+                    </div>
+                </section>
+
+                <section id="contact">
+                    <div class="card">
+                        <h2>Contact</h2>
+                        <p>Email: <a href="mailto:eda.kas60@gmail.com">eda.kas60@gmail.com</a></p>
+                    </div>
+                </section>
+        </div>
     </div>
-  </div>
 
-  <footer>
-    © <span id="y"></span> Eda Kaş · edakass.github.io
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <footer>
+        © <span id="y"></span> Eda Kaş · edakass.github.io <br>
+        Illustrated, Designed & Built by Eda Kaş
+    </footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
+
 </html>
