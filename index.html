@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eda Kaş • Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --card: #ffffff;
+      --line: #e5e7eb;
+      --r: 12px;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, sans-serif; background: var(--bg); color: var(--text); }
+    a { color: var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    .layout { display:flex; max-width: 1100px; margin:0 auto; padding:20px; gap:40px; }
+    .sidebar { flex:0 0 280px; background:var(--card); padding:20px; border:1px solid var(--line); border-radius:var(--r); text-align:center; }
+    .sidebar img { width:160px; height:160px; border-radius:50%; object-fit:cover; margin-bottom:15px; }
+    .sidebar h1 { font-size:22px; margin:0; }
+    .sidebar h2 { font-size:15px; font-weight:400; color:var(--muted); margin:4px 0 20px; }
+    .sidebar nav a { display:block; margin:6px 0; font-weight:600; }
+    .sidebar .links { margin-top:20px; display:flex; justify-content:center; gap:12px; }
+    .sidebar .links a { font-size:20px; }
+
+    .content { flex:1; }
+    section { margin-bottom:40px; }
+    h2 { font-size:20px; margin:0 0 10px; }
+    h3 { font-size:16px; margin:0 0 6px; }
+    p { margin:6px 0; line-height:1.5; }
+    .muted { color:var(--muted); }
+    .card { background:var(--card); padding:16px; border:1px solid var(--line); border-radius:var(--r); margin-bottom:12px; }
+    ul { margin:6px 0 0 18px; }
+    footer { text-align:center; padding:20px; color:var(--muted); border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Eda Kaş">
+      <h1>Eda Kaş</h1>
+      <h2>Java Backend Developer</h2>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="links">
+        <a href="https://github.com/edakass" target="_blank">🐙</a>
+        <a href="https://www.linkedin.com/in/eda-ka%C5%9F-289943180/" target="_blank">💼</a>
+        <a href="mailto:eda.kas60@gmail.com">✉️</a>
+      </div>
+    </aside>
+
+    <div class="content">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate backend developer with ~2.5 years of experience building Java/Spring Boot services in cloud environments (AWS, DigitalOcean). Enthusiastic about designing APIs, writing maintainable code, and collaborating in agile teams.</p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="card">
+          <h3>Software Developer — Prisync <span class="muted">(Jan 2023 – May 2025)</span></h3>
+          <ul>
+            <li>Developed and maintained internal services and UIs.</li>
+            <li>Migrated AWS‑based queue to DigitalOcean for cost savings.</li>
+            <li>Improved database queries, resolved timeouts.</li>
+            <li>Implemented Slack/Discord integrations and automated tasks.</li>
+          </ul>
+          <p class="muted">Java, Spring Boot, MySQL, AWS, DigitalOcean, RabbitMQ, Docker</p>
+        </div>
+        <div class="card">
+          <h3>Software Engineering Intern — Ziraat Teknoloji <span class="muted">(Jul 2021 – Sep 2021)</span></h3>
+          <p>Worked on Credit Applications team. Built a bank automation system with C#/.NET, Oracle DB.</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="card">
+          <h3>Digital Wallet Service</h3>
+          <p>Role‑based JWT authentication, wallet & transaction APIs, clean documentation.</p>
+          <p><a href="https://github.com/edakass/Digital-Wallet-Service" target="_blank">View on GitHub →</a></p>
+        </div>
+        <div class="card">
+          <h3>Cascadek</h3>
+          <p>Multi‑platform content publishing tool (Slack, Discord integrations).</p>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+          <h3>B.Sc. Computer Engineering — Gaziosmanpaşa University</h3>
+          <p class="muted">2017 – 2022</p>
+        </div>
+        <div class="card">
+          <h3>Erasmus — Politechnika Świętokrzyska</h3>
+          <p class="muted">Spring 2021 · Kielce, Poland</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:eda.kas60@gmail.com">eda.kas60@gmail.com</a></p>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="y"></span> Eda Kaş · edakass.github.io
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
